@@ -29,6 +29,7 @@ buildscript {
 
     dependencies {
         classpath libs.tools.android.plugin
+        classpath libs.androidx.baselineprofile
         classpath libs.kotlin.gradle.plugin
     }
 }

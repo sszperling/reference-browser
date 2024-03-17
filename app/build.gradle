@@ -4,6 +4,7 @@
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'androidx.baselineprofile'
 apply from: "$project.rootDir/automation/gradle/versionCode.gradle"
 
 
@@ -85,7 +86,7 @@ android {
 
     splits {
         abi {
-            enable true
+            enable false // true
 
             reset()
 
@@ -337,6 +338,9 @@ dependencies {
     implementation libs.androidx.compose.material
 
     implementation libs.google.material
+    implementation libs.profileinstaller
+
+    baselineProfile project(":baselineprofile")
 
     androidTestImplementation libs.uiautomator
     androidTestImplementation libs.junit.ktx
