@@ -18,13 +18,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import mozilla.components.browser.state.selector.selectedTab
-import mozilla.components.lib.state.observeAsState
+import mozilla.components.lib.state.ext.observeAsComposableState
 import org.mozilla.reference.browser.compose.browserStore
 import org.mozilla.reference.browser.compose.sessionUseCases
 
 @Composable
 fun BrowserToolbar() {
-    val url: String? by browserStore().observeAsState { state -> state.selectedTab?.content?.url }
+    val url: String? by browserStore().observeAsComposableState { state -> state.selectedTab?.content?.url }
     val editMode = remember { mutableStateOf(false) }
     val useCases = sessionUseCases()
 
